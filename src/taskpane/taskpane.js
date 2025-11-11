@@ -5,6 +5,8 @@
 
 /* global console, document, Excel, Office */
 
+console.log("running and deployed!");
+
 Office.onReady((info) => {
   if (info.host === Office.HostType.Excel) {
     document.getElementById("sideload-msg").style.display = "none";
