@@ -37,8 +37,10 @@ export async function run() {
     console.error(error);
   }
   Office.onReady(() => {});
+}
 
   function downloadSampleFile() {
+    console.log("Trying to download file");
     const content = "hello world"; // The text content for the file
     const blob = new Blob([content], { type: "text/plain;charset=utf-8;" });
 
@@ -53,5 +55,8 @@ export async function run() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  }
-}
+    }
+  Office.onReady(() => {});
+
+
+
