@@ -39,24 +39,38 @@ export async function run() {
   Office.onReady(() => {});
 }
 
-  function downloadSampleFile() {
-    console.log("Trying to download file");
-    const content = "hello world"; // The text content for the file
-    const blob = new Blob([content], { type: "text/plain;charset=utf-8;" });
+function downloadSampleFile() {
+  console.log("[Log] Trying to download file");
 
-    // Create a link element
-    const link = document.createElement("a");
-    const url = URL.createObjectURL(blob);
+  const content = "hello world";
+  const blob = new Blob([content], { type: "text/plain;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
 
+  console.log("Generated Blob:", blob);
+  console.log("Generated URL:", url);
+
+  // Create a temporary link element
+  const link = document.createElement("a");
+  try {
     link.setAttribute("href", url);
-    link.setAttribute("download", "samplefile.txt"); // .txt extension for the file
+    link.setAttribute("download", "samplefile.txt");
     link.style.visibility = "hidden";
-
     document.body.appendChild(link);
+  } catch (error) {
+    console.error("[Error] Creation of element failed", error);
+  }
+
+  // Click on link element
+  try {
     link.click();
-    document.body.removeChild(link);
-    }
-  Office.onReady(() => {});
+    console.log("[Log] Click event triggered");
+  } catch (error) {
+    console.error("[Error] Click event failed", error);
+  }
 
+  document.body.removeChild(link);
 
-
+  // Clean up URL object
+  URL.revokeObjectURL(url);
+}
+Office.onReady(() => {});
