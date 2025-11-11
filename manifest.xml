@@ -4,8 +4,8 @@
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="my_test_taskpane_addin"/>
-  <Description DefaultValue="A template to get started."/>
+  <DisplayName DefaultValue="Ecospold-Add-In"/>
+  <Description DefaultValue="An inoffical tool for exporting ecospold."/>
   <IconUrl DefaultValue="https://mystorage135123aifjda3a.z1.web.core.windows.net/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://mystorage135123aifjda3a.z1.web.core.windows.net/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://github.com/timo-bmgd/ecospold-add-in/issues"/>
